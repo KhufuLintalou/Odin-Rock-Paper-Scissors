@@ -1,9 +1,9 @@
 // Function to get the computer choice for the game.
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3);   // This gives a random number.
+    let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber == 0) {
         return "Rock";
-    } else if (randomNumber == 1) {   // Assigned the random numbers to an appropriate string.
+    } else if (randomNumber == 1) { 
         return "Paper";
     } else {
         return "Scissors";
@@ -13,7 +13,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
-    if (player === "rock") {   // If player choice was rock.
+    if (player === "rock") {   
         if (computer === "rock") {
             return "Tie!";
         } else if (computer === "paper") {
@@ -22,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
             return "You win!";
         }
     }
-    if (player === "paper") {   // If player choice was paper.
+    if (player === "paper") {   
         if (computer === "paper") {
             return "Tie!";
         } else if (computer === "rock") {
@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
             return "Computer win!";
         }
     }
-    if (player === "scissors") {   // If player choice was scissors.
+    if (player === "scissors") {   
         if (computer === "scissors") {
             return "Tie!";
         } else if (computer === "paper") {
@@ -43,23 +43,23 @@ function playRound(playerSelection, computerSelection) {
 }
 // Function that play the game for five rounds, keep the scores and report the winner.
 function playGame() {
-    let playerScore = 0;   // Created the variable for scoring.
+    let playerScore = 0;   
     let computerScore = 0;
-    for (i = 0; i < 5; i++) {   // This is to loop the function for 5 times.
-        switch ((playRound(prompt("What's your choice?"), getComputerChoice()))) {   // playRound function with prompt for player input and getComputerChoice for computer input.
-        case "You win!":   // In case the player won, add a score to it and report the results of the round.
+    for (i = 0; i < 5; i++) {   
+        switch ((playRound(prompt("What's your choice?"), getComputerChoice()))) { 
+        case "You win!":   
             playerScore++;
             console.log(`You won this round! Your Score:${playerScore}`);
             break;
-        case "Computer win!":   // In case the computer won, add a score to it and report the results.
+        case "Computer win!":   
             computerScore++;
             console.log(`Computer won this round! Computer's Score:${computerScore}`);
             break;
-        case "Tie!":   // This is when they are tied.
+        case "Tie!":   
             console.log("This round is a tie!");
         }
     }  
-    if (playerScore === computerScore) {   // This is for comparing the scores and announce the final result of all five rounds.
+    if (playerScore === computerScore) {
         console.log("Game end in a Tie!");
     } else if (playerScore < computerScore) {
         console.log("Computer is the Winner!") 
