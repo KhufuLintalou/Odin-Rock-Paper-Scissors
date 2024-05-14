@@ -59,3 +59,5 @@ choiceScissors.addEventListener("click", function() {
     result.textContent = (playRound("Scissors", getComputerChoice()));
 })
 
+
+
