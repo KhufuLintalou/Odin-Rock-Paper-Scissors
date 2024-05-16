@@ -35,29 +35,91 @@ function playRound(playerSelection, computerSelection) {
         if (computer === "scissors") {
             return "Tie!";
         } else if (computer === "paper") {
-            return "You win! Computer chooses Paper.";
+            return "You Win! Computer chooses Paper.";
         } else {
-            return "You lose! Computer chooses Rock.";
+            return "You Lose! Computer chooses Rock.";
         }
     }
 }
 
 let result = document.querySelector(".result");
+let player = document.querySelector(".player");
+let computer = document.querySelector(".computer")
+let finalResult = document.querySelector(".final-result");
+let playerScore = 0;
+let computerScore = 0;
 
 let choiceRock = document.querySelector("#rock");
 choiceRock.addEventListener("click", function() {
     result.textContent = (playRound("Rock", getComputerChoice()));
+    switch (result.textContent) {
+        case "You Win! Computer chooses Scissors.":
+            playerScore++;
+            player.textContent = `Your Score: ${playerScore}`;
+            break;
+        case "You Lose! Computer chooses Paper.":
+            computerScore++
+            computer.textContent = `Computer's Score: ${computerScore}`;
+    }
+    if (playerScore == 5) {
+        finalResult.textContent = "YOU WON THE GAME!!!";
+        choiceRock.remove();
+        choicePaper.remove();
+        choiceScissors.remove();
+    } else if (computerScore == 5) {
+        finalResult.textContent = "COMPUTER WON THE GAME!!!";
+        choiceRock.remove();
+        choicePaper.remove();
+        choiceScissors.remove();
+    }
 });
 
 let choicePaper = document.querySelector("#paper");
 choicePaper.addEventListener("click", function() {
     result.textContent = (playRound("Paper", getComputerChoice()));
+    switch (result.textContent) {
+        case "You Win! Computer chooses Rock.":
+            playerScore++;
+            player.textContent = `Your Score: ${playerScore}`;
+            break;
+        case "You Lose! Computer chooses Scissors.":
+            computerScore++;
+            computer.textContent = `Computer's Score: ${computerScore}`;
+    }
+    if (playerScore == 5) {
+        finalResult.textContent = "YOU WON THE GAME!!!";
+        choiceRock.remove();
+        choicePaper.remove();
+        choiceScissors.remove();
+    } else if (computerScore == 5) {
+        finalResult.textContent = "COMPUTER WON THE GAME!!!";
+        choiceRock.remove();
+        choicePaper.remove();
+        choiceScissors.remove();
+    }
 })
 
 let choiceScissors = document.querySelector("#scissors");
 choiceScissors.addEventListener("click", function() {
     result.textContent = (playRound("Scissors", getComputerChoice()));
+    switch (result.textContent) {
+        case "You Win! Computer chooses Paper.":
+            playerScore++
+            player.textContent = `Your Score: ${playerScore}`;
+            break;
+        case "You Lose! Computer chooses Rock.":
+            computerScore++
+            computer.textContent = `Computer's Score: ${computerScore}`;
+    }
+    if (playerScore == 5) {
+        finalResult.textContent = "YOU WON THE GAME!!!";
+        choiceRock.remove();
+        choicePaper.remove();
+        choiceScissors.remove();
+    } else if (computerScore == 5) {
+        finalResult.textContent = "COMPUTER WON THE GAME!!!";
+        choiceRock.remove();
+        choicePaper.remove();
+        choiceScissors.remove();
+    }
 })
-
-
-

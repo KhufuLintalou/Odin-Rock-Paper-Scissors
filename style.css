@@ -1,10 +1,11 @@
 body {
     background-color: rgb(41, 41, 41);
+    font-family: sans-serif;
 }
 .result {
-    margin-top: 10px;
+    margin-top: 30px;
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
     color: white;
 }
@@ -65,4 +66,25 @@ h1 {
 }
 #scissors:active {
     background-color: green;
+}
+
+.score {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.final-result {
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 20px;
+    font-family: serif;
+    background-color: black;
+}
+
+.line {
+    border: 1px solid white;
+    margin: 25px;
 }
